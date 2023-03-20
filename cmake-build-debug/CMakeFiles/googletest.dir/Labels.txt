@@ -1,0 +1,13 @@
+# Target labels
+ googletest
+# Source files and their labels
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googletest
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googletest.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googletest-complete.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-build.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-update.rule

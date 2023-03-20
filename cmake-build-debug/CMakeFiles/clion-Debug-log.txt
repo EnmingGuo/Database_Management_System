@@ -1,0 +1,4 @@
+/Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/tool/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug

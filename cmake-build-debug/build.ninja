@@ -1,0 +1,1345 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: PeterDB
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/
+
+#############################################
+# Utility command for googletest
+
+build googletest: phony CMakeFiles/googletest CMakeFiles/googletest-complete googletest-prefix/src/googletest-stamp/googletest-done googletest-prefix/src/googletest-stamp/googletest-build googletest-prefix/src/googletest-stamp/googletest-configure googletest-prefix/src/googletest-stamp/googletest-download googletest-prefix/src/googletest-stamp/googletest-install googletest-prefix/src/googletest-stamp/googletest-mkdir googletest-prefix/src/googletest-stamp/googletest-patch googletest-prefix/src/googletest-stamp/googletest-update
+
+
+#############################################
+# Utility command for googlelog
+
+build googlelog: phony CMakeFiles/googlelog CMakeFiles/googlelog-complete googlelog-prefix/src/googlelog-stamp/googlelog-done googlelog-prefix/src/googlelog-stamp/googlelog-build googlelog-prefix/src/googlelog-stamp/googlelog-configure googlelog-prefix/src/googlelog-stamp/googlelog-download googlelog-prefix/src/googlelog-stamp/googlelog-install googlelog-prefix/src/googlelog-stamp/googlelog-mkdir googlelog-prefix/src/googlelog-stamp/googlelog-patch googlelog-prefix/src/googlelog-stamp/googlelog-update
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Phony custom command for CMakeFiles/googletest
+
+build CMakeFiles/googletest | ${cmake_ninja_workdir}CMakeFiles/googletest: phony CMakeFiles/googletest-complete
+
+
+#############################################
+# Custom command for CMakeFiles/googletest-complete
+
+build CMakeFiles/googletest-complete googletest-prefix/src/googletest-stamp/googletest-done | ${cmake_ninja_workdir}CMakeFiles/googletest-complete ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-done: CUSTOM_COMMAND googletest-prefix/src/googletest-stamp/googletest-install googletest-prefix/src/googletest-stamp/googletest-mkdir googletest-prefix/src/googletest-stamp/googletest-download googletest-prefix/src/googletest-stamp/googletest-update googletest-prefix/src/googletest-stamp/googletest-patch googletest-prefix/src/googletest-stamp/googletest-configure googletest-prefix/src/googletest-stamp/googletest-build googletest-prefix/src/googletest-stamp/googletest-install
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E make_directory /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googletest-complete && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-done
+  DESC = Completed 'googletest'
+  restat = 1
+
+
+#############################################
+# Custom command for googletest-prefix/src/googletest-stamp/googletest-build
+
+build googletest-prefix/src/googletest-stamp/googletest-build | ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-build: CUSTOM_COMMAND googletest-prefix/src/googletest-stamp/googletest-configure
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --build . && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-build
+  DESC = Performing build step for 'googletest'
+  restat = 1
+
+
+#############################################
+# Custom command for googletest-prefix/src/googletest-stamp/googletest-configure
+
+build googletest-prefix/src/googletest-stamp/googletest-configure | ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-configure: CUSTOM_COMMAND googletest-prefix/tmp/googletest-cfgcmd.txt googletest-prefix/src/googletest-stamp/googletest-patch
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_PREFIX=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug -GNinja /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-configure
+  DESC = Performing configure step for 'googletest'
+  restat = 1
+
+
+#############################################
+# Custom command for googletest-prefix/src/googletest-stamp/googletest-download
+
+build googletest-prefix/src/googletest-stamp/googletest-download | ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-download: CUSTOM_COMMAND googletest-prefix/src/googletest-stamp/googletest-gitinfo.txt googletest-prefix/src/googletest-stamp/googletest-mkdir
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/tmp/googletest-gitclone.cmake && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-download
+  DESC = Performing download step (git clone) for 'googletest'
+  restat = 1
+
+
+#############################################
+# Custom command for googletest-prefix/src/googletest-stamp/googletest-install
+
+build googletest-prefix/src/googletest-stamp/googletest-install | ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-install: CUSTOM_COMMAND googletest-prefix/src/googletest-stamp/googletest-build
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --build . --target install && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-install
+  DESC = Performing install step for 'googletest'
+  restat = 1
+
+
+#############################################
+# Custom command for googletest-prefix/src/googletest-stamp/googletest-mkdir
+
+build googletest-prefix/src/googletest-stamp/googletest-mkdir | ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-mkdir: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -Dcfgdir= -P /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/tmp/googletest-mkdirs.cmake && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-mkdir
+  DESC = Creating directories for 'googletest'
+  restat = 1
+
+
+#############################################
+# Custom command for googletest-prefix/src/googletest-stamp/googletest-patch
+
+build googletest-prefix/src/googletest-stamp/googletest-patch | ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-patch: CUSTOM_COMMAND googletest-prefix/src/googletest-stamp/googletest-update
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo_append && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest-stamp/googletest-patch
+  DESC = No patch step for 'googletest'
+  restat = 1
+
+
+#############################################
+# Custom command for googletest-prefix/src/googletest-stamp/googletest-update
+
+build googletest-prefix/src/googletest-stamp/googletest-update | ${cmake_ninja_workdir}googletest-prefix/src/googletest-stamp/googletest-update: CUSTOM_COMMAND googletest-prefix/src/googletest-stamp/googletest-download
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/src/googletest && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googletest-prefix/tmp/googletest-gitupdate.cmake
+  DESC = Performing update step for 'googletest'
+
+
+#############################################
+# Phony custom command for CMakeFiles/googlelog
+
+build CMakeFiles/googlelog | ${cmake_ninja_workdir}CMakeFiles/googlelog: phony CMakeFiles/googlelog-complete
+
+
+#############################################
+# Custom command for CMakeFiles/googlelog-complete
+
+build CMakeFiles/googlelog-complete googlelog-prefix/src/googlelog-stamp/googlelog-done | ${cmake_ninja_workdir}CMakeFiles/googlelog-complete ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-done: CUSTOM_COMMAND googlelog-prefix/src/googlelog-stamp/googlelog-install googlelog-prefix/src/googlelog-stamp/googlelog-mkdir googlelog-prefix/src/googlelog-stamp/googlelog-download googlelog-prefix/src/googlelog-stamp/googlelog-update googlelog-prefix/src/googlelog-stamp/googlelog-patch googlelog-prefix/src/googlelog-stamp/googlelog-configure googlelog-prefix/src/googlelog-stamp/googlelog-build googlelog-prefix/src/googlelog-stamp/googlelog-install
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E make_directory /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googlelog-complete && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-done
+  DESC = Completed 'googlelog'
+  restat = 1
+
+
+#############################################
+# Custom command for googlelog-prefix/src/googlelog-stamp/googlelog-build
+
+build googlelog-prefix/src/googlelog-stamp/googlelog-build | ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-build: CUSTOM_COMMAND googlelog-prefix/src/googlelog-stamp/googlelog-configure
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --build . && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-build
+  DESC = Performing build step for 'googlelog'
+  restat = 1
+
+
+#############################################
+# Custom command for googlelog-prefix/src/googlelog-stamp/googlelog-configure
+
+build googlelog-prefix/src/googlelog-stamp/googlelog-configure | ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-configure: CUSTOM_COMMAND googlelog-prefix/tmp/googlelog-cfgcmd.txt googlelog-prefix/src/googlelog-stamp/googlelog-patch
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_PREFIX=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug -DWITH_GFLAGS=OFF -GNinja /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-configure
+  DESC = Performing configure step for 'googlelog'
+  restat = 1
+
+
+#############################################
+# Custom command for googlelog-prefix/src/googlelog-stamp/googlelog-download
+
+build googlelog-prefix/src/googlelog-stamp/googlelog-download | ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-download: CUSTOM_COMMAND googlelog-prefix/src/googlelog-stamp/googlelog-gitinfo.txt googlelog-prefix/src/googlelog-stamp/googlelog-mkdir
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/tmp/googlelog-gitclone.cmake && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-download
+  DESC = Performing download step (git clone) for 'googlelog'
+  restat = 1
+
+
+#############################################
+# Custom command for googlelog-prefix/src/googlelog-stamp/googlelog-install
+
+build googlelog-prefix/src/googlelog-stamp/googlelog-install | ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-install: CUSTOM_COMMAND googlelog-prefix/src/googlelog-stamp/googlelog-build
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --build . --target install && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-install
+  DESC = Performing install step for 'googlelog'
+  restat = 1
+
+
+#############################################
+# Custom command for googlelog-prefix/src/googlelog-stamp/googlelog-mkdir
+
+build googlelog-prefix/src/googlelog-stamp/googlelog-mkdir | ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-mkdir: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -Dcfgdir= -P /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/tmp/googlelog-mkdirs.cmake && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-mkdir
+  DESC = Creating directories for 'googlelog'
+  restat = 1
+
+
+#############################################
+# Custom command for googlelog-prefix/src/googlelog-stamp/googlelog-patch
+
+build googlelog-prefix/src/googlelog-stamp/googlelog-patch | ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-patch: CUSTOM_COMMAND googlelog-prefix/src/googlelog-stamp/googlelog-update
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo_append && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E touch /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-patch
+  DESC = No patch step for 'googlelog'
+  restat = 1
+
+
+#############################################
+# Custom command for googlelog-prefix/src/googlelog-stamp/googlelog-update
+
+build googlelog-prefix/src/googlelog-stamp/googlelog-update | ${cmake_ninja_workdir}googlelog-prefix/src/googlelog-stamp/googlelog-update: CUSTOM_COMMAND googlelog-prefix/src/googlelog-stamp/googlelog-download
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/tmp/googlelog-gitupdate.cmake
+  DESC = Performing update step for 'googlelog'
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target main
+
+
+#############################################
+# Order-only phony target for main
+
+build cmake_object_order_depends_target_main: phony || cmake_object_order_depends_target_cli cmake_object_order_depends_target_ix cmake_object_order_depends_target_pfm cmake_object_order_depends_target_qe cmake_object_order_depends_target_rbfm cmake_object_order_depends_target_rm
+
+build src/CMakeFiles/main.dir/start.cc.o: CXX_COMPILER__main_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/start.cc || cmake_object_order_depends_target_main
+  DEFINES = -DDEBUG=1
+  DEP_FILE = src/CMakeFiles/main.dir/start.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = src/CMakeFiles/main.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/main.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main
+
+
+#############################################
+# Link the executable main
+
+build main: CXX_EXECUTABLE_LINKER__main_Debug src/CMakeFiles/main.dir/start.cc.o | src/cli/libcli.a src/qe/libqe.a src/ix/libix.a src/rm/librm.a src/ix/libix.a src/rbfm/librbfm.a src/pfm/libpfm.a || src/cli/libcli.a src/ix/libix.a src/pfm/libpfm.a src/qe/libqe.a src/rbfm/librbfm.a src/rm/librm.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib  src/cli/libcli.a  src/qe/libqe.a  src/ix/libix.a  src/rm/librm.a  src/ix/libix.a  src/rbfm/librbfm.a  src/pfm/libpfm.a  -lglog  -lreadline
+  LINK_PATH = -L/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib
+  OBJECT_DIR = src/CMakeFiles/main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = main
+  TARGET_PDB = main.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/test: phony src/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target pfm
+
+
+#############################################
+# Order-only phony target for pfm
+
+build cmake_object_order_depends_target_pfm: phony || googlelog
+
+build src/pfm/CMakeFiles/pfm.dir/pfm.cc.o: CXX_COMPILER__pfm_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/pfm/pfm.cc || cmake_object_order_depends_target_pfm
+  DEFINES = -DDEBUG=1
+  DEP_FILE = src/pfm/CMakeFiles/pfm.dir/pfm.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = src/pfm/CMakeFiles/pfm.dir
+  OBJECT_FILE_DIR = src/pfm/CMakeFiles/pfm.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target pfm
+
+
+#############################################
+# Link the static library src/pfm/libpfm.a
+
+build src/pfm/libpfm.a: CXX_STATIC_LIBRARY_LINKER__pfm_Debug src/pfm/CMakeFiles/pfm.dir/pfm.cc.o || googlelog
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/pfm/CMakeFiles/pfm.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/pfm/libpfm.a
+  TARGET_PDB = pfm.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/pfm/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/pfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/pfm/test: phony src/pfm/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/pfm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/pfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/pfm/edit_cache: phony src/pfm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/pfm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/pfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/pfm/rebuild_cache: phony src/pfm/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target rbfm
+
+
+#############################################
+# Order-only phony target for rbfm
+
+build cmake_object_order_depends_target_rbfm: phony || cmake_object_order_depends_target_pfm googlelog
+
+build src/rbfm/CMakeFiles/rbfm.dir/rbfm.cc.o: CXX_COMPILER__rbfm_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/rbfm/rbfm.cc || cmake_object_order_depends_target_rbfm
+  DEFINES = -DDEBUG=1
+  DEP_FILE = src/rbfm/CMakeFiles/rbfm.dir/rbfm.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = src/rbfm/CMakeFiles/rbfm.dir
+  OBJECT_FILE_DIR = src/rbfm/CMakeFiles/rbfm.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target rbfm
+
+
+#############################################
+# Link the static library src/rbfm/librbfm.a
+
+build src/rbfm/librbfm.a: CXX_STATIC_LIBRARY_LINKER__rbfm_Debug src/rbfm/CMakeFiles/rbfm.dir/rbfm.cc.o || googlelog src/pfm/libpfm.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/rbfm/CMakeFiles/rbfm.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/rbfm/librbfm.a
+  TARGET_PDB = rbfm.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/rbfm/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rbfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/rbfm/test: phony src/rbfm/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/rbfm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rbfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/rbfm/edit_cache: phony src/rbfm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/rbfm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rbfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rbfm/rebuild_cache: phony src/rbfm/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target ix
+
+
+#############################################
+# Order-only phony target for ix
+
+build cmake_object_order_depends_target_ix: phony || cmake_object_order_depends_target_pfm googlelog
+
+build src/ix/CMakeFiles/ix.dir/ix.cc.o: CXX_COMPILER__ix_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/ix/ix.cc || cmake_object_order_depends_target_ix
+  DEFINES = -DDEBUG=1
+  DEP_FILE = src/ix/CMakeFiles/ix.dir/ix.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = src/ix/CMakeFiles/ix.dir
+  OBJECT_FILE_DIR = src/ix/CMakeFiles/ix.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target ix
+
+
+#############################################
+# Link the static library src/ix/libix.a
+
+build src/ix/libix.a: CXX_STATIC_LIBRARY_LINKER__ix_Debug src/ix/CMakeFiles/ix.dir/ix.cc.o || googlelog src/pfm/libpfm.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/ix/CMakeFiles/ix.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/ix/libix.a
+  TARGET_PDB = ix.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/ix/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/ix && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/ix/test: phony src/ix/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/ix/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/ix && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/ix/edit_cache: phony src/ix/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/ix/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/ix && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/ix/rebuild_cache: phony src/ix/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target rm
+
+
+#############################################
+# Order-only phony target for rm
+
+build cmake_object_order_depends_target_rm: phony || cmake_object_order_depends_target_ix cmake_object_order_depends_target_pfm cmake_object_order_depends_target_rbfm googlelog
+
+build src/rm/CMakeFiles/rm.dir/rm.cc.o: CXX_COMPILER__rm_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/rm/rm.cc || cmake_object_order_depends_target_rm
+  DEFINES = -DDEBUG=1
+  DEP_FILE = src/rm/CMakeFiles/rm.dir/rm.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = src/rm/CMakeFiles/rm.dir
+  OBJECT_FILE_DIR = src/rm/CMakeFiles/rm.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target rm
+
+
+#############################################
+# Link the static library src/rm/librm.a
+
+build src/rm/librm.a: CXX_STATIC_LIBRARY_LINKER__rm_Debug src/rm/CMakeFiles/rm.dir/rm.cc.o || googlelog src/ix/libix.a src/pfm/libpfm.a src/rbfm/librbfm.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/rm/CMakeFiles/rm.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/rm/librm.a
+  TARGET_PDB = rm.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/rm/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/rm/test: phony src/rm/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/rm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/rm/edit_cache: phony src/rm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/rm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rm/rebuild_cache: phony src/rm/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target qe
+
+
+#############################################
+# Order-only phony target for qe
+
+build cmake_object_order_depends_target_qe: phony || cmake_object_order_depends_target_ix cmake_object_order_depends_target_pfm cmake_object_order_depends_target_rbfm cmake_object_order_depends_target_rm googlelog
+
+build src/qe/CMakeFiles/qe.dir/qe.cc.o: CXX_COMPILER__qe_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/qe/qe.cc || cmake_object_order_depends_target_qe
+  DEFINES = -DDEBUG=1
+  DEP_FILE = src/qe/CMakeFiles/qe.dir/qe.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = src/qe/CMakeFiles/qe.dir
+  OBJECT_FILE_DIR = src/qe/CMakeFiles/qe.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target qe
+
+
+#############################################
+# Link the static library src/qe/libqe.a
+
+build src/qe/libqe.a: CXX_STATIC_LIBRARY_LINKER__qe_Debug src/qe/CMakeFiles/qe.dir/qe.cc.o || googlelog src/ix/libix.a src/pfm/libpfm.a src/rbfm/librbfm.a src/rm/librm.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/qe/CMakeFiles/qe.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/qe/libqe.a
+  TARGET_PDB = qe.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/qe/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/qe && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/qe/test: phony src/qe/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/qe/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/qe && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/qe/edit_cache: phony src/qe/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/qe/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/qe && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/qe/rebuild_cache: phony src/qe/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target cli
+
+
+#############################################
+# Order-only phony target for cli
+
+build cmake_object_order_depends_target_cli: phony || cmake_object_order_depends_target_ix cmake_object_order_depends_target_pfm cmake_object_order_depends_target_qe cmake_object_order_depends_target_rbfm cmake_object_order_depends_target_rm
+
+build src/cli/CMakeFiles/cli.dir/cli.cc.o: CXX_COMPILER__cli_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/cli/cli.cc || cmake_object_order_depends_target_cli
+  DEFINES = -DDEBUG=1
+  DEP_FILE = src/cli/CMakeFiles/cli.dir/cli.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = src/cli/CMakeFiles/cli.dir
+  OBJECT_FILE_DIR = src/cli/CMakeFiles/cli.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target cli
+
+
+#############################################
+# Link the static library src/cli/libcli.a
+
+build src/cli/libcli.a: CXX_STATIC_LIBRARY_LINKER__cli_Debug src/cli/CMakeFiles/cli.dir/cli.cc.o || src/ix/libix.a src/pfm/libpfm.a src/qe/libqe.a src/rbfm/librbfm.a src/rm/librm.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/cli/CMakeFiles/cli.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/cli/libcli.a
+  TARGET_PDB = cli.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/cli/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/cli && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/cli/test: phony src/cli/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/cli/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/cli && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/cli/edit_cache: phony src/cli/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/cli/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/cli && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/cli/rebuild_cache: phony src/cli/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/test: phony test/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target pfmtest_public
+
+
+#############################################
+# Order-only phony target for pfmtest_public
+
+build cmake_object_order_depends_target_pfmtest_public: phony || cmake_object_order_depends_target_pfm googletest
+
+build test/pfm/CMakeFiles/pfmtest_public.dir/pfmtest_public.cc.o: CXX_COMPILER__pfmtest_public_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/pfm/pfmtest_public.cc || cmake_object_order_depends_target_pfmtest_public
+  DEFINES = -DDEBUG=1
+  DEP_FILE = test/pfm/CMakeFiles/pfmtest_public.dir/pfmtest_public.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = test/pfm/CMakeFiles/pfmtest_public.dir
+  OBJECT_FILE_DIR = test/pfm/CMakeFiles/pfmtest_public.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target pfmtest_public
+
+
+#############################################
+# Link the executable pfmtest_public
+
+build pfmtest_public test/pfm/pfmtest_public[1]_tests.cmake | ${cmake_ninja_workdir}test/pfm/pfmtest_public[1]_tests.cmake: CXX_EXECUTABLE_LINKER__pfmtest_public_Debug test/pfm/CMakeFiles/pfmtest_public.dir/pfmtest_public.cc.o | src/pfm/libpfm.a || googletest src/pfm/libpfm.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib  -lgtest  -lgmock  -lgtest_main  -lpthread  src/pfm/libpfm.a  -lglog
+  LINK_PATH = -L/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib
+  OBJECT_DIR = test/pfm/CMakeFiles/pfmtest_public.dir
+  POST_BUILD = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/pfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -D TEST_TARGET=pfmtest_public -D TEST_EXECUTABLE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/pfmtest_public -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -D TEST_EXTRA_ARGS= -D "TEST_PROPERTIES=VS_DEBUGGER_WORKING_DIRECTORY;/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy" -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=pfmtest_public_TESTS -D CTEST_FILE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/pfm/pfmtest_public[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTestAddTests.cmake
+  PRE_LINK = :
+  RESTAT = 1
+  TARGET_FILE = pfmtest_public
+  TARGET_PDB = pfmtest_public.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/pfm/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/pfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/pfm/test: phony test/pfm/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/pfm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/pfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/pfm/edit_cache: phony test/pfm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/pfm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/pfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/pfm/rebuild_cache: phony test/pfm/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target rbfmtest_public
+
+
+#############################################
+# Order-only phony target for rbfmtest_public
+
+build cmake_object_order_depends_target_rbfmtest_public: phony || cmake_object_order_depends_target_pfm cmake_object_order_depends_target_rbfm googletest
+
+build test/rbfm/CMakeFiles/rbfmtest_public.dir/rbfmtest_public.cc.o: CXX_COMPILER__rbfmtest_public_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/rbfm/rbfmtest_public.cc || cmake_object_order_depends_target_rbfmtest_public
+  DEFINES = -DDEBUG=1
+  DEP_FILE = test/rbfm/CMakeFiles/rbfmtest_public.dir/rbfmtest_public.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = test/rbfm/CMakeFiles/rbfmtest_public.dir
+  OBJECT_FILE_DIR = test/rbfm/CMakeFiles/rbfmtest_public.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target rbfmtest_public
+
+
+#############################################
+# Link the executable rbfmtest_public
+
+build rbfmtest_public test/rbfm/rbfmtest_public[1]_tests.cmake | ${cmake_ninja_workdir}test/rbfm/rbfmtest_public[1]_tests.cmake: CXX_EXECUTABLE_LINKER__rbfmtest_public_Debug test/rbfm/CMakeFiles/rbfmtest_public.dir/rbfmtest_public.cc.o | src/pfm/libpfm.a src/rbfm/librbfm.a src/pfm/libpfm.a || googletest src/pfm/libpfm.a src/rbfm/librbfm.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib  -lgtest  -lgmock  -lgtest_main  -lpthread  src/pfm/libpfm.a  src/rbfm/librbfm.a  src/pfm/libpfm.a  -lglog
+  LINK_PATH = -L/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib
+  OBJECT_DIR = test/rbfm/CMakeFiles/rbfmtest_public.dir
+  POST_BUILD = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rbfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -D TEST_TARGET=rbfmtest_public -D TEST_EXECUTABLE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/rbfmtest_public -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -D TEST_EXTRA_ARGS= -D "TEST_PROPERTIES=VS_DEBUGGER_WORKING_DIRECTORY;/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy" -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=rbfmtest_public_TESTS -D CTEST_FILE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rbfm/rbfmtest_public[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTestAddTests.cmake
+  PRE_LINK = :
+  RESTAT = 1
+  TARGET_FILE = rbfmtest_public
+  TARGET_PDB = rbfmtest_public.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/rbfm/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rbfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/rbfm/test: phony test/rbfm/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/rbfm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rbfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/rbfm/edit_cache: phony test/rbfm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/rbfm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rbfm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rbfm/rebuild_cache: phony test/rbfm/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ixtest_public
+
+
+#############################################
+# Order-only phony target for ixtest_public
+
+build cmake_object_order_depends_target_ixtest_public: phony || cmake_object_order_depends_target_ix cmake_object_order_depends_target_pfm googletest
+
+build test/ix/CMakeFiles/ixtest_public.dir/ixtest_public.cc.o: CXX_COMPILER__ixtest_public_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/ix/ixtest_public.cc || cmake_object_order_depends_target_ixtest_public
+  DEFINES = -DDEBUG=1
+  DEP_FILE = test/ix/CMakeFiles/ixtest_public.dir/ixtest_public.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = test/ix/CMakeFiles/ixtest_public.dir
+  OBJECT_FILE_DIR = test/ix/CMakeFiles/ixtest_public.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ixtest_public
+
+
+#############################################
+# Link the executable ixtest_public
+
+build ixtest_public test/ix/ixtest_public[1]_tests.cmake | ${cmake_ninja_workdir}test/ix/ixtest_public[1]_tests.cmake: CXX_EXECUTABLE_LINKER__ixtest_public_Debug test/ix/CMakeFiles/ixtest_public.dir/ixtest_public.cc.o | src/pfm/libpfm.a src/ix/libix.a src/pfm/libpfm.a || googletest src/ix/libix.a src/pfm/libpfm.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib  -lgtest  -lgmock  -lgtest_main  -lpthread  src/pfm/libpfm.a  src/ix/libix.a  src/pfm/libpfm.a  -lglog
+  LINK_PATH = -L/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib
+  OBJECT_DIR = test/ix/CMakeFiles/ixtest_public.dir
+  POST_BUILD = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/ix && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -D TEST_TARGET=ixtest_public -D TEST_EXECUTABLE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/ixtest_public -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -D TEST_EXTRA_ARGS= -D "TEST_PROPERTIES=VS_DEBUGGER_WORKING_DIRECTORY;/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy" -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=ixtest_public_TESTS -D CTEST_FILE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/ix/ixtest_public[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTestAddTests.cmake
+  PRE_LINK = :
+  RESTAT = 1
+  TARGET_FILE = ixtest_public
+  TARGET_PDB = ixtest_public.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/ix/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/ix && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/ix/test: phony test/ix/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/ix/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/ix && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/ix/edit_cache: phony test/ix/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/ix/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/ix && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/ix/rebuild_cache: phony test/ix/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target rmtest_public
+
+
+#############################################
+# Order-only phony target for rmtest_public
+
+build cmake_object_order_depends_target_rmtest_public: phony || cmake_object_order_depends_target_ix cmake_object_order_depends_target_pfm cmake_object_order_depends_target_rbfm cmake_object_order_depends_target_rm googletest
+
+build test/rm/CMakeFiles/rmtest_public.dir/rmtest_public.cc.o: CXX_COMPILER__rmtest_public_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/rm/rmtest_public.cc || cmake_object_order_depends_target_rmtest_public
+  DEFINES = -DDEBUG=1
+  DEP_FILE = test/rm/CMakeFiles/rmtest_public.dir/rmtest_public.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = test/rm/CMakeFiles/rmtest_public.dir
+  OBJECT_FILE_DIR = test/rm/CMakeFiles/rmtest_public.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target rmtest_public
+
+
+#############################################
+# Link the executable rmtest_public
+
+build rmtest_public test/rm/rmtest_public[1]_tests.cmake | ${cmake_ninja_workdir}test/rm/rmtest_public[1]_tests.cmake: CXX_EXECUTABLE_LINKER__rmtest_public_Debug test/rm/CMakeFiles/rmtest_public.dir/rmtest_public.cc.o | src/pfm/libpfm.a src/rbfm/librbfm.a src/rm/librm.a src/rbfm/librbfm.a src/ix/libix.a src/pfm/libpfm.a || googletest src/ix/libix.a src/pfm/libpfm.a src/rbfm/librbfm.a src/rm/librm.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib  -lgtest  -lgmock  -lgtest_main  -lpthread  src/pfm/libpfm.a  src/rbfm/librbfm.a  src/rm/librm.a  src/rbfm/librbfm.a  src/ix/libix.a  src/pfm/libpfm.a  -lglog
+  LINK_PATH = -L/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib
+  OBJECT_DIR = test/rm/CMakeFiles/rmtest_public.dir
+  POST_BUILD = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -D TEST_TARGET=rmtest_public -D TEST_EXECUTABLE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/rmtest_public -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -D TEST_EXTRA_ARGS= -D "TEST_PROPERTIES=VS_DEBUGGER_WORKING_DIRECTORY;/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy" -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=rmtest_public_TESTS -D CTEST_FILE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm/rmtest_public[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTestAddTests.cmake
+  PRE_LINK = :
+  RESTAT = 1
+  TARGET_FILE = rmtest_public
+  TARGET_PDB = rmtest_public.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/rm/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/rm/test: phony test/rm/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/rm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/rm/edit_cache: phony test/rm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/rm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rm/rebuild_cache: phony test/rm/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target qetest_public
+
+
+#############################################
+# Order-only phony target for qetest_public
+
+build cmake_object_order_depends_target_qetest_public: phony || cmake_object_order_depends_target_ix cmake_object_order_depends_target_pfm cmake_object_order_depends_target_qe cmake_object_order_depends_target_rbfm cmake_object_order_depends_target_rm googletest
+
+build test/qe/CMakeFiles/qetest_public.dir/qetest_public.cc.o: CXX_COMPILER__qetest_public_Debug /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/qe/qetest_public.cc || cmake_object_order_depends_target_qetest_public
+  DEFINES = -DDEBUG=1
+  DEP_FILE = test/qe/CMakeFiles/qetest_public.dir/qetest_public.cc.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy
+  OBJECT_DIR = test/qe/CMakeFiles/qetest_public.dir
+  OBJECT_FILE_DIR = test/qe/CMakeFiles/qetest_public.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target qetest_public
+
+
+#############################################
+# Link the executable qetest_public
+
+build qetest_public test/qe/qetest_public[1]_tests.cmake | ${cmake_ninja_workdir}test/qe/qetest_public[1]_tests.cmake: CXX_EXECUTABLE_LINKER__qetest_public_Debug test/qe/CMakeFiles/qetest_public.dir/qetest_public.cc.o | src/qe/libqe.a src/rm/librm.a src/ix/libix.a src/rbfm/librbfm.a src/pfm/libpfm.a || googletest src/ix/libix.a src/pfm/libpfm.a src/qe/libqe.a src/rbfm/librbfm.a src/rm/librm.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib  -lgtest  -lgmock  -lgtest_main  -lpthread  src/qe/libqe.a  src/rm/librm.a  src/ix/libix.a  src/rbfm/librbfm.a  src/pfm/libpfm.a  -lglog
+  LINK_PATH = -L/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib
+  OBJECT_DIR = test/qe/CMakeFiles/qetest_public.dir
+  POST_BUILD = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/qe && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -D TEST_TARGET=qetest_public -D TEST_EXECUTABLE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/qetest_public -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -D TEST_EXTRA_ARGS= -D "TEST_PROPERTIES=VS_DEBUGGER_WORKING_DIRECTORY;/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy" -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=qetest_public_TESTS -D CTEST_FILE=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/qe/qetest_public[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTestAddTests.cmake
+  PRE_LINK = :
+  RESTAT = 1
+  TARGET_FILE = qetest_public
+  TARGET_PDB = qetest_public.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/qe/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/qe && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/qe/test: phony test/qe/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/qe/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/qe && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/qe/edit_cache: phony test/qe/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/qe/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/qe && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/qe/rebuild_cache: phony test/qe/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+build cli: phony src/cli/libcli.a
+
+build ix: phony src/ix/libix.a
+
+build libcli.a: phony src/cli/libcli.a
+
+build libix.a: phony src/ix/libix.a
+
+build libpfm.a: phony src/pfm/libpfm.a
+
+build libqe.a: phony src/qe/libqe.a
+
+build librbfm.a: phony src/rbfm/librbfm.a
+
+build librm.a: phony src/rm/librm.a
+
+build pfm: phony src/pfm/libpfm.a
+
+build qe: phony src/qe/libqe.a
+
+build rbfm: phony src/rbfm/librbfm.a
+
+build rm: phony src/rm/librm.a
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug
+
+build all: phony googletest googlelog src/all test/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src
+
+build src/all: phony main src/pfm/all src/rbfm/all src/ix/all src/rm/all src/qe/all src/cli/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/cli
+
+build src/cli/all: phony src/cli/libcli.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/ix
+
+build src/ix/all: phony src/ix/libix.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/pfm
+
+build src/pfm/all: phony src/pfm/libpfm.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/qe
+
+build src/qe/all: phony src/qe/libqe.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rbfm
+
+build src/rbfm/all: phony src/rbfm/librbfm.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/src/rm
+
+build src/rm/all: phony src/rm/librm.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test
+
+build test/all: phony test/pfm/all test/rbfm/all test/ix/all test/rm/all test/qe/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/ix
+
+build test/ix/all: phony ixtest_public
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/pfm
+
+build test/pfm/all: phony pfmtest_public
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/qe
+
+build test/qe/all: phony qetest_public
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rbfm
+
+build test/rbfm/all: phony rbfmtest_public
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm
+
+build test/rm/all: phony rmtest_public
+
+# =============================================================================
+# Unknown Build Time Dependencies.
+# Tell Ninja that they may appear as side effects of build rules
+# otherwise ordered by order-only dependencies.
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/RepositoryInfo.txt.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/cfgcmd.txt.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/gitclone.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/gitupdate.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/mkdirs.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindGit.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/cli/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/ix/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/pfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/qe/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/rbfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/rm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/ix/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/pfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/qe/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/rbfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/rm/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake googlelog-prefix/tmp/googlelog-mkdirs.cmake googletest-prefix/tmp/googletest-mkdirs.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/RepositoryInfo.txt.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/cfgcmd.txt.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/gitclone.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/gitupdate.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/ExternalProject/mkdirs.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindGit.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/cli/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/ix/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/pfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/qe/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/rbfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/src/rm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/ix/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/pfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/qe/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/rbfm/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/test/rm/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake googlelog-prefix/tmp/googlelog-mkdirs.cmake googletest-prefix/tmp/googletest-mkdirs.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

@@ -1,0 +1,303 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Determining if the include file syscall.h exists failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_815b9 && [1/2] Building CXX object CMakeFiles/cmTC_815b9.dir/CheckIncludeFile.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_815b9.dir/CheckIncludeFile.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_815b9.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_815b9.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_815b9.dir/CheckIncludeFile.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: 'syscall.h' file not found
+#include <syscall.h>
+         ^~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the include file ucontext.h exists failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_9e0a2 && [1/2] Building CXX object CMakeFiles/cmTC_9e0a2.dir/CheckIncludeFile.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_9e0a2.dir/CheckIncludeFile.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_9e0a2.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_9e0a2.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_9e0a2.dir/CheckIncludeFile.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+In file included from /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:
+/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/ucontext.h:51:2: error: The deprecated ucontext routines require _XOPEN_SOURCE to be defined
+#error The deprecated ucontext routines require _XOPEN_SOURCE to be defined
+ ^
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the include file ext/slist exists failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_d5150 && [1/2] Building CXX object CMakeFiles/cmTC_d5150.dir/CheckIncludeFile.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_d5150.dir/CheckIncludeFile.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_d5150.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_d5150.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_d5150.dir/CheckIncludeFile.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: 'ext/slist' file not found
+#include <ext/slist>
+         ^~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the include file tr1/unordered_map exists failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_69b67 && [1/2] Building CXX object CMakeFiles/cmTC_69b67.dir/CheckIncludeFile.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_69b67.dir/CheckIncludeFile.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_69b67.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_69b67.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_69b67.dir/CheckIncludeFile.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: 'tr1/unordered_map' file not found
+#include <tr1/unordered_map>
+         ^~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the include file tr1/unordered_set exists failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_ff29e && [1/2] Building CXX object CMakeFiles/cmTC_ff29e.dir/CheckIncludeFile.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_ff29e.dir/CheckIncludeFile.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_ff29e.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_ff29e.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_ff29e.dir/CheckIncludeFile.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: 'tr1/unordered_set' file not found
+#include <tr1/unordered_set>
+         ^~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining size of unsigned __int16 failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_e4e3c && [1/2] Building CXX object CMakeFiles/cmTC_e4e3c.dir/HAVE___UINT16.cpp.o
+[31mFAILED: [0mCMakeFiles/cmTC_e4e3c.dir/HAVE___UINT16.cpp.o 
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_e4e3c.dir/HAVE___UINT16.cpp.o -MF CMakeFiles/cmTC_e4e3c.dir/HAVE___UINT16.cpp.o.d -o CMakeFiles/cmTC_e4e3c.dir/HAVE___UINT16.cpp.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:29:12: error: expected ')'
+  ('0' + ((SIZE / 10000)%10)),
+           ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:29:12: note: to match this '('
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:30:12: error: expected ')'
+  ('0' + ((SIZE / 1000)%10)),
+           ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:30:12: note: to match this '('
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:31:12: error: expected ')'
+  ('0' + ((SIZE / 100)%10)),
+           ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:31:12: note: to match this '('
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:32:12: error: expected ')'
+  ('0' + ((SIZE / 10)%10)),
+           ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:32:12: note: to match this '('
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:33:12: error: expected ')'
+  ('0' +  (SIZE    % 10)),
+           ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:33:12: note: to match this '('
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:27:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+5 errors generated.
+ninja: build stopped: subcommand failed.
+
+
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CheckTypeSize/HAVE___UINT16.cpp:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__PPC64__)
+# define KEY '_','_','P','P','C','6','4','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__PPC__)
+# define KEY '_','_','P','P','C','_','_'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(unsigned __int16))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the function UnDecorateSymbolName exists in the dbghelp failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_d3f60 && [1/2] Building CXX object CMakeFiles/cmTC_d3f60.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_d3f60
+[31mFAILED: [0mcmTC_d3f60 
+: && /Library/Developer/CommandLineTools/usr/bin/c++ -DCHECK_FUNCTION_EXISTS=UnDecorateSymbolName -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cmTC_d3f60.dir/CheckFunctionExists.cxx.o -o cmTC_d3f60  -ldbghelp && :
+ld: library not found for -ldbghelp
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Performing C++ SOURCE FILE Test HAVE___DECLSPEC failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_13151 && [1/2] Building CXX object CMakeFiles/cmTC_13151.dir/src.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_13151.dir/src.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE___DECLSPEC  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_13151.dir/src.cxx.o -MF CMakeFiles/cmTC_13151.dir/src.cxx.o.d -o CMakeFiles/cmTC_13151.dir/src.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx:2:1: error: '__declspec' attributes are not enabled; use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
+__declspec(selectany) int a;
+^
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+__declspec(selectany) int a;
+int main(void) { return 0; }
+
+Performing C++ SOURCE FILE Test STL_NO_NAMESPACE failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_01cc8 && [1/2] Building CXX object CMakeFiles/cmTC_01cc8.dir/src.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_01cc8.dir/src.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++ -DSTL_NO_NAMESPACE  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_01cc8.dir/src.cxx.o -MF CMakeFiles/cmTC_01cc8.dir/src.cxx.o.d -o CMakeFiles/cmTC_01cc8.dir/src.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx:3:1: error: no template named 'vector'; did you mean 'std::vector'?
+vector<int> t; int main() { }
+^~~~~~
+std::vector
+/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector:493:28: note: 'std::vector' declared here
+class _LIBCPP_TEMPLATE_VIS vector
+                           ^
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+#include <vector>
+vector<int> t; int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_MSVC_TLS failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_898b5 && [1/2] Building CXX object CMakeFiles/cmTC_898b5.dir/src.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_898b5.dir/src.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_MSVC_TLS  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_898b5.dir/src.cxx.o -MF CMakeFiles/cmTC_898b5.dir/src.cxx.o.d -o CMakeFiles/cmTC_898b5.dir/src.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx:2:1: error: '__declspec' attributes are not enabled; use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
+__declspec(thread) int tls;
+^
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+__declspec(thread) int tls;
+int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_CXX11_TLS failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_1583a && [1/2] Building CXX object CMakeFiles/cmTC_1583a.dir/src.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_1583a.dir/src.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_CXX11_TLS  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_1583a.dir/src.cxx.o -MF CMakeFiles/cmTC_1583a.dir/src.cxx.o.d -o CMakeFiles/cmTC_1583a.dir/src.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx:2:1: error: unknown type name 'thread_local'
+thread_local int tls;
+^
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+thread_local int tls;
+int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_ALIGNED_STORAGE failed with the following output:
+Change Dir: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/homebrew/bin/ninja cmTC_cdf70 && [1/2] Building CXX object CMakeFiles/cmTC_cdf70.dir/src.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_cdf70.dir/src.cxx.o 
+/Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_ALIGNED_STORAGE  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_cdf70.dir/src.cxx.o -MF CMakeFiles/cmTC_cdf70.dir/src.cxx.o.d -o CMakeFiles/cmTC_cdf70.dir/src.cxx.o -c /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CMakeFiles/CMakeTmp/src.cxx:3:48: error: expected '(' for function-style cast or type construction
+std::aligned_storage<sizeof(char), alignof(char)>::type data;
+                                           ~~~~^
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+#include <type_traits>
+std::aligned_storage<sizeof(char), alignof(char)>::type data;
+int main() { }
+

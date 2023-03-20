@@ -1,0 +1,5 @@
+if(EXISTS "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm/rmtest_public[1]_tests.cmake")
+  include("/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/test/rm/rmtest_public[1]_tests.cmake")
+else()
+  add_test(rmtest_public_NOT_BUILT rmtest_public_NOT_BUILT)
+endif()

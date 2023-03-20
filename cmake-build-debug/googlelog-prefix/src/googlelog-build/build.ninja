@@ -1,0 +1,910 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: glog
+# Configurations: 
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/
+
+#############################################
+# Utility command for Experimental
+
+build Experimental: phony CMakeFiles/Experimental
+
+
+#############################################
+# Utility command for Nightly
+
+build Nightly: phony CMakeFiles/Nightly
+
+
+#############################################
+# Utility command for Continuous
+
+build Continuous: phony CMakeFiles/Continuous
+
+
+#############################################
+# Utility command for NightlyMemoryCheck
+
+build NightlyMemoryCheck: phony CMakeFiles/NightlyMemoryCheck
+
+
+#############################################
+# Utility command for NightlyStart
+
+build NightlyStart: phony CMakeFiles/NightlyStart
+
+
+#############################################
+# Utility command for NightlyUpdate
+
+build NightlyUpdate: phony CMakeFiles/NightlyUpdate
+
+
+#############################################
+# Utility command for NightlyConfigure
+
+build NightlyConfigure: phony CMakeFiles/NightlyConfigure
+
+
+#############################################
+# Utility command for NightlyBuild
+
+build NightlyBuild: phony CMakeFiles/NightlyBuild
+
+
+#############################################
+# Utility command for NightlyTest
+
+build NightlyTest: phony CMakeFiles/NightlyTest
+
+
+#############################################
+# Utility command for NightlyCoverage
+
+build NightlyCoverage: phony CMakeFiles/NightlyCoverage
+
+
+#############################################
+# Utility command for NightlyMemCheck
+
+build NightlyMemCheck: phony CMakeFiles/NightlyMemCheck
+
+
+#############################################
+# Utility command for NightlySubmit
+
+build NightlySubmit: phony CMakeFiles/NightlySubmit
+
+
+#############################################
+# Utility command for ExperimentalStart
+
+build ExperimentalStart: phony CMakeFiles/ExperimentalStart
+
+
+#############################################
+# Utility command for ExperimentalUpdate
+
+build ExperimentalUpdate: phony CMakeFiles/ExperimentalUpdate
+
+
+#############################################
+# Utility command for ExperimentalConfigure
+
+build ExperimentalConfigure: phony CMakeFiles/ExperimentalConfigure
+
+
+#############################################
+# Utility command for ExperimentalBuild
+
+build ExperimentalBuild: phony CMakeFiles/ExperimentalBuild
+
+
+#############################################
+# Utility command for ExperimentalTest
+
+build ExperimentalTest: phony CMakeFiles/ExperimentalTest
+
+
+#############################################
+# Utility command for ExperimentalCoverage
+
+build ExperimentalCoverage: phony CMakeFiles/ExperimentalCoverage
+
+
+#############################################
+# Utility command for ExperimentalMemCheck
+
+build ExperimentalMemCheck: phony CMakeFiles/ExperimentalMemCheck
+
+
+#############################################
+# Utility command for ExperimentalSubmit
+
+build ExperimentalSubmit: phony CMakeFiles/ExperimentalSubmit
+
+
+#############################################
+# Utility command for ContinuousStart
+
+build ContinuousStart: phony CMakeFiles/ContinuousStart
+
+
+#############################################
+# Utility command for ContinuousUpdate
+
+build ContinuousUpdate: phony CMakeFiles/ContinuousUpdate
+
+
+#############################################
+# Utility command for ContinuousConfigure
+
+build ContinuousConfigure: phony CMakeFiles/ContinuousConfigure
+
+
+#############################################
+# Utility command for ContinuousBuild
+
+build ContinuousBuild: phony CMakeFiles/ContinuousBuild
+
+
+#############################################
+# Utility command for ContinuousTest
+
+build ContinuousTest: phony CMakeFiles/ContinuousTest
+
+
+#############################################
+# Utility command for ContinuousCoverage
+
+build ContinuousCoverage: phony CMakeFiles/ContinuousCoverage
+
+
+#############################################
+# Utility command for ContinuousMemCheck
+
+build ContinuousMemCheck: phony CMakeFiles/ContinuousMemCheck
+
+
+#############################################
+# Utility command for ContinuousSubmit
+
+build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target glog
+
+
+#############################################
+# Order-only phony target for glog
+
+build cmake_object_order_depends_target_glog: phony || CMakeFiles/glog.dir
+
+build CMakeFiles/glog.dir/src/demangle.cc.o: CXX_COMPILER__glog_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/demangle.cc || cmake_object_order_depends_target_glog
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGOOGLE_GLOG_IS_A_DLL
+  DEP_FILE = CMakeFiles/glog.dir/src/demangle.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  OBJECT_DIR = CMakeFiles/glog.dir
+  OBJECT_FILE_DIR = CMakeFiles/glog.dir/src
+
+build CMakeFiles/glog.dir/src/logging.cc.o: CXX_COMPILER__glog_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/logging.cc || cmake_object_order_depends_target_glog
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGOOGLE_GLOG_IS_A_DLL
+  DEP_FILE = CMakeFiles/glog.dir/src/logging.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  OBJECT_DIR = CMakeFiles/glog.dir
+  OBJECT_FILE_DIR = CMakeFiles/glog.dir/src
+
+build CMakeFiles/glog.dir/src/raw_logging.cc.o: CXX_COMPILER__glog_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/raw_logging.cc || cmake_object_order_depends_target_glog
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGOOGLE_GLOG_IS_A_DLL
+  DEP_FILE = CMakeFiles/glog.dir/src/raw_logging.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  OBJECT_DIR = CMakeFiles/glog.dir
+  OBJECT_FILE_DIR = CMakeFiles/glog.dir/src
+
+build CMakeFiles/glog.dir/src/symbolize.cc.o: CXX_COMPILER__glog_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/symbolize.cc || cmake_object_order_depends_target_glog
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGOOGLE_GLOG_IS_A_DLL
+  DEP_FILE = CMakeFiles/glog.dir/src/symbolize.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  OBJECT_DIR = CMakeFiles/glog.dir
+  OBJECT_FILE_DIR = CMakeFiles/glog.dir/src
+
+build CMakeFiles/glog.dir/src/utilities.cc.o: CXX_COMPILER__glog_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/utilities.cc || cmake_object_order_depends_target_glog
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGOOGLE_GLOG_IS_A_DLL
+  DEP_FILE = CMakeFiles/glog.dir/src/utilities.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  OBJECT_DIR = CMakeFiles/glog.dir
+  OBJECT_FILE_DIR = CMakeFiles/glog.dir/src
+
+build CMakeFiles/glog.dir/src/vlog_is_on.cc.o: CXX_COMPILER__glog_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/vlog_is_on.cc || cmake_object_order_depends_target_glog
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGOOGLE_GLOG_IS_A_DLL
+  DEP_FILE = CMakeFiles/glog.dir/src/vlog_is_on.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  OBJECT_DIR = CMakeFiles/glog.dir
+  OBJECT_FILE_DIR = CMakeFiles/glog.dir/src
+
+build CMakeFiles/glog.dir/src/signalhandler.cc.o: CXX_COMPILER__glog_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/signalhandler.cc || cmake_object_order_depends_target_glog
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGOOGLE_GLOG_IS_A_DLL
+  DEP_FILE = CMakeFiles/glog.dir/src/signalhandler.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  OBJECT_DIR = CMakeFiles/glog.dir
+  OBJECT_FILE_DIR = CMakeFiles/glog.dir/src
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target glog
+
+
+#############################################
+# Link the shared library libglog.0.5.0.dylib
+
+build libglog.0.5.0.dylib: CXX_SHARED_LIBRARY_LINKER__glog_ CMakeFiles/glog.dir/src/demangle.cc.o CMakeFiles/glog.dir/src/logging.cc.o CMakeFiles/glog.dir/src/raw_logging.cc.o CMakeFiles/glog.dir/src/symbolize.cc.o CMakeFiles/glog.dir/src/utilities.cc.o CMakeFiles/glog.dir/src/vlog_is_on.cc.o CMakeFiles/glog.dir/src/signalhandler.cc.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  INSTALLNAME_DIR = @rpath/
+  LINK_FLAGS = -current_version 0.5.0
+  OBJECT_DIR = CMakeFiles/glog.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libglog.0.dylib
+  SONAME_FLAG = -install_name
+  TARGET_FILE = libglog.0.5.0.dylib
+  TARGET_PDB = glog.dylib.dbg
+
+
+#############################################
+# Create library symlink libglog.dylib
+
+build libglog.0.dylib libglog.dylib: CMAKE_SYMLINK_LIBRARY libglog.0.5.0.dylib
+  POST_BUILD = :
+
+# =============================================================================
+# Object build statements for EXECUTABLE target logging_unittest
+
+
+#############################################
+# Order-only phony target for logging_unittest
+
+build cmake_object_order_depends_target_logging_unittest: phony || cmake_object_order_depends_target_glog
+
+build CMakeFiles/logging_unittest.dir/src/logging_unittest.cc.o: CXX_COMPILER__logging_unittest_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/logging_unittest.cc || cmake_object_order_depends_target_logging_unittest
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION
+  DEP_FILE = CMakeFiles/logging_unittest.dir/src/logging_unittest.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -isystem /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include
+  OBJECT_DIR = CMakeFiles/logging_unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles/logging_unittest.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target logging_unittest
+
+
+#############################################
+# Link the executable logging_unittest
+
+build logging_unittest: CXX_EXECUTABLE_LINKER__logging_unittest_ CMakeFiles/logging_unittest.dir/src/logging_unittest.cc.o | libglog.0.5.0.dylib /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a || libglog.dylib libglog.dylib
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build  libglog.0.5.0.dylib  /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/logging_unittest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = logging_unittest
+  TARGET_PDB = logging_unittest.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target stl_logging_unittest
+
+
+#############################################
+# Order-only phony target for stl_logging_unittest
+
+build cmake_object_order_depends_target_stl_logging_unittest: phony || cmake_object_order_depends_target_glog
+
+build CMakeFiles/stl_logging_unittest.dir/src/stl_logging_unittest.cc.o: CXX_COMPILER__stl_logging_unittest_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/stl_logging_unittest.cc || cmake_object_order_depends_target_stl_logging_unittest
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION -DGLOG_STL_LOGGING_FOR_EXT_HASH -DGLOG_STL_LOGGING_FOR_UNORDERED
+  DEP_FILE = CMakeFiles/stl_logging_unittest.dir/src/stl_logging_unittest.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args -Wno-deprecated -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -isystem /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include
+  OBJECT_DIR = CMakeFiles/stl_logging_unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles/stl_logging_unittest.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target stl_logging_unittest
+
+
+#############################################
+# Link the executable stl_logging_unittest
+
+build stl_logging_unittest: CXX_EXECUTABLE_LINKER__stl_logging_unittest_ CMakeFiles/stl_logging_unittest.dir/src/stl_logging_unittest.cc.o | libglog.0.5.0.dylib /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a || libglog.dylib libglog.dylib
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build  libglog.0.5.0.dylib  /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/stl_logging_unittest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = stl_logging_unittest
+  TARGET_PDB = stl_logging_unittest.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target symbolize_unittest
+
+
+#############################################
+# Order-only phony target for symbolize_unittest
+
+build cmake_object_order_depends_target_symbolize_unittest: phony || cmake_object_order_depends_target_glog
+
+build CMakeFiles/symbolize_unittest.dir/src/symbolize_unittest.cc.o: CXX_COMPILER__symbolize_unittest_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/symbolize_unittest.cc || cmake_object_order_depends_target_symbolize_unittest
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION
+  DEP_FILE = CMakeFiles/symbolize_unittest.dir/src/symbolize_unittest.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -isystem /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include
+  OBJECT_DIR = CMakeFiles/symbolize_unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles/symbolize_unittest.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target symbolize_unittest
+
+
+#############################################
+# Link the executable symbolize_unittest
+
+build symbolize_unittest: CXX_EXECUTABLE_LINKER__symbolize_unittest_ CMakeFiles/symbolize_unittest.dir/src/symbolize_unittest.cc.o | libglog.0.5.0.dylib /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a || libglog.dylib libglog.dylib
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build  libglog.0.5.0.dylib  /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/symbolize_unittest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = symbolize_unittest
+  TARGET_PDB = symbolize_unittest.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target demangle_unittest
+
+
+#############################################
+# Order-only phony target for demangle_unittest
+
+build cmake_object_order_depends_target_demangle_unittest: phony || cmake_object_order_depends_target_glog
+
+build CMakeFiles/demangle_unittest.dir/src/demangle_unittest.cc.o: CXX_COMPILER__demangle_unittest_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/demangle_unittest.cc || cmake_object_order_depends_target_demangle_unittest
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION
+  DEP_FILE = CMakeFiles/demangle_unittest.dir/src/demangle_unittest.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -isystem /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include
+  OBJECT_DIR = CMakeFiles/demangle_unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles/demangle_unittest.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demangle_unittest
+
+
+#############################################
+# Link the executable demangle_unittest
+
+build demangle_unittest: CXX_EXECUTABLE_LINKER__demangle_unittest_ CMakeFiles/demangle_unittest.dir/src/demangle_unittest.cc.o | libglog.0.5.0.dylib /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a || libglog.dylib libglog.dylib
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build  libglog.0.5.0.dylib  /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/demangle_unittest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = demangle_unittest
+  TARGET_PDB = demangle_unittest.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target stacktrace_unittest
+
+
+#############################################
+# Order-only phony target for stacktrace_unittest
+
+build cmake_object_order_depends_target_stacktrace_unittest: phony || cmake_object_order_depends_target_glog
+
+build CMakeFiles/stacktrace_unittest.dir/src/stacktrace_unittest.cc.o: CXX_COMPILER__stacktrace_unittest_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/stacktrace_unittest.cc || cmake_object_order_depends_target_stacktrace_unittest
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION
+  DEP_FILE = CMakeFiles/stacktrace_unittest.dir/src/stacktrace_unittest.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -isystem /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include
+  OBJECT_DIR = CMakeFiles/stacktrace_unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles/stacktrace_unittest.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target stacktrace_unittest
+
+
+#############################################
+# Link the executable stacktrace_unittest
+
+build stacktrace_unittest: CXX_EXECUTABLE_LINKER__stacktrace_unittest_ CMakeFiles/stacktrace_unittest.dir/src/stacktrace_unittest.cc.o | libglog.0.5.0.dylib /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a || libglog.dylib libglog.dylib
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build  libglog.0.5.0.dylib  /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/stacktrace_unittest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = stacktrace_unittest
+  TARGET_PDB = stacktrace_unittest.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target utilities_unittest
+
+
+#############################################
+# Order-only phony target for utilities_unittest
+
+build cmake_object_order_depends_target_utilities_unittest: phony || cmake_object_order_depends_target_glog
+
+build CMakeFiles/utilities_unittest.dir/src/utilities_unittest.cc.o: CXX_COMPILER__utilities_unittest_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/utilities_unittest.cc || cmake_object_order_depends_target_utilities_unittest
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION
+  DEP_FILE = CMakeFiles/utilities_unittest.dir/src/utilities_unittest.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -isystem /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include
+  OBJECT_DIR = CMakeFiles/utilities_unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles/utilities_unittest.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target utilities_unittest
+
+
+#############################################
+# Link the executable utilities_unittest
+
+build utilities_unittest: CXX_EXECUTABLE_LINKER__utilities_unittest_ CMakeFiles/utilities_unittest.dir/src/utilities_unittest.cc.o | libglog.0.5.0.dylib /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a || libglog.dylib libglog.dylib
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build  libglog.0.5.0.dylib  /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/utilities_unittest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = utilities_unittest
+  TARGET_PDB = utilities_unittest.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target signalhandler_unittest
+
+
+#############################################
+# Order-only phony target for signalhandler_unittest
+
+build cmake_object_order_depends_target_signalhandler_unittest: phony || cmake_object_order_depends_target_glog
+
+build CMakeFiles/signalhandler_unittest.dir/src/signalhandler_unittest.cc.o: CXX_COMPILER__signalhandler_unittest_ /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/signalhandler_unittest.cc || cmake_object_order_depends_target_signalhandler_unittest
+  DEFINES = -DGLOG_NO_SYMBOLIZE_DETECTION
+  DEP_FILE = CMakeFiles/signalhandler_unittest.dir/src/signalhandler_unittest.cc.o.d
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unnamed-type-template-args -std=gnu++11
+  INCLUDES = -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build -I/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src -isystem /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include
+  OBJECT_DIR = CMakeFiles/signalhandler_unittest.dir
+  OBJECT_FILE_DIR = CMakeFiles/signalhandler_unittest.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target signalhandler_unittest
+
+
+#############################################
+# Link the executable signalhandler_unittest
+
+build signalhandler_unittest: CXX_EXECUTABLE_LINKER__signalhandler_unittest_ CMakeFiles/signalhandler_unittest.dir/src/signalhandler_unittest.cc.o | libglog.0.5.0.dylib /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a || libglog.dylib libglog.dylib
+  FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build  libglog.0.5.0.dylib  /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/signalhandler_unittest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = signalhandler_unittest
+  TARGET_PDB = signalhandler_unittest.dbg
+
+
+#############################################
+# Utility command for package
+
+build CMakeFiles/package.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build package: phony CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackSourceConfig.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build package_source: phony CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog -B/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for CMakeFiles/Experimental
+
+build CMakeFiles/Experimental | ${cmake_ninja_workdir}CMakeFiles/Experimental: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D Experimental
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/Nightly
+
+build CMakeFiles/Nightly | ${cmake_ninja_workdir}CMakeFiles/Nightly: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D Nightly
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/Continuous
+
+build CMakeFiles/Continuous | ${cmake_ninja_workdir}CMakeFiles/Continuous: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D Continuous
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyMemoryCheck
+
+build CMakeFiles/NightlyMemoryCheck | ${cmake_ninja_workdir}CMakeFiles/NightlyMemoryCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyMemoryCheck
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyStart
+
+build CMakeFiles/NightlyStart | ${cmake_ninja_workdir}CMakeFiles/NightlyStart: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyStart
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyUpdate
+
+build CMakeFiles/NightlyUpdate | ${cmake_ninja_workdir}CMakeFiles/NightlyUpdate: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyUpdate
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyConfigure
+
+build CMakeFiles/NightlyConfigure | ${cmake_ninja_workdir}CMakeFiles/NightlyConfigure: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyConfigure
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyBuild
+
+build CMakeFiles/NightlyBuild | ${cmake_ninja_workdir}CMakeFiles/NightlyBuild: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyBuild
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyTest
+
+build CMakeFiles/NightlyTest | ${cmake_ninja_workdir}CMakeFiles/NightlyTest: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyTest
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyCoverage
+
+build CMakeFiles/NightlyCoverage | ${cmake_ninja_workdir}CMakeFiles/NightlyCoverage: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyCoverage
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlyMemCheck
+
+build CMakeFiles/NightlyMemCheck | ${cmake_ninja_workdir}CMakeFiles/NightlyMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlyMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/NightlySubmit
+
+build CMakeFiles/NightlySubmit | ${cmake_ninja_workdir}CMakeFiles/NightlySubmit: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D NightlySubmit
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalStart
+
+build CMakeFiles/ExperimentalStart | ${cmake_ninja_workdir}CMakeFiles/ExperimentalStart: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalStart
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalUpdate
+
+build CMakeFiles/ExperimentalUpdate | ${cmake_ninja_workdir}CMakeFiles/ExperimentalUpdate: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalUpdate
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalConfigure
+
+build CMakeFiles/ExperimentalConfigure | ${cmake_ninja_workdir}CMakeFiles/ExperimentalConfigure: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalConfigure
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalBuild
+
+build CMakeFiles/ExperimentalBuild | ${cmake_ninja_workdir}CMakeFiles/ExperimentalBuild: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalBuild
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalTest
+
+build CMakeFiles/ExperimentalTest | ${cmake_ninja_workdir}CMakeFiles/ExperimentalTest: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalTest
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalCoverage
+
+build CMakeFiles/ExperimentalCoverage | ${cmake_ninja_workdir}CMakeFiles/ExperimentalCoverage: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalCoverage
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalMemCheck
+
+build CMakeFiles/ExperimentalMemCheck | ${cmake_ninja_workdir}CMakeFiles/ExperimentalMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ExperimentalSubmit
+
+build CMakeFiles/ExperimentalSubmit | ${cmake_ninja_workdir}CMakeFiles/ExperimentalSubmit: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalSubmit
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousStart
+
+build CMakeFiles/ContinuousStart | ${cmake_ninja_workdir}CMakeFiles/ContinuousStart: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousStart
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousUpdate
+
+build CMakeFiles/ContinuousUpdate | ${cmake_ninja_workdir}CMakeFiles/ContinuousUpdate: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousUpdate
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousConfigure
+
+build CMakeFiles/ContinuousConfigure | ${cmake_ninja_workdir}CMakeFiles/ContinuousConfigure: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousConfigure
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousBuild
+
+build CMakeFiles/ContinuousBuild | ${cmake_ninja_workdir}CMakeFiles/ContinuousBuild: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousBuild
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousTest
+
+build CMakeFiles/ContinuousTest | ${cmake_ninja_workdir}CMakeFiles/ContinuousTest: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousTest
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousCoverage
+
+build CMakeFiles/ContinuousCoverage | ${cmake_ninja_workdir}CMakeFiles/ContinuousCoverage: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousCoverage
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousMemCheck
+
+build CMakeFiles/ContinuousMemCheck | ${cmake_ninja_workdir}CMakeFiles/ContinuousMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for CMakeFiles/ContinuousSubmit
+
+build CMakeFiles/ContinuousSubmit | ${cmake_ninja_workdir}CMakeFiles/ContinuousSubmit: CUSTOM_COMMAND
+  COMMAND = cd /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build && /Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousSubmit
+  pool = console
+
+# =============================================================================
+# Target aliases.
+
+build glog: phony libglog.dylib
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-build
+
+build all: phony libglog.dylib logging_unittest stl_logging_unittest symbolize_unittest demangle_unittest stacktrace_unittest utilities_unittest signalhandler_unittest
+
+# =============================================================================
+# Unknown Build Time Dependencies.
+# Tell Ninja that they may appear as side effects of build rules
+# otherwise ordered by order-only dependencies.
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakePackageConfigHelpers.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeParseArguments.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakePushCheckState.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CPack.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CPackComponent.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CTestTargets.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CTestUseLaunchers.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCXXSourceRuns.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckFunctionExists.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckIncludeFile.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckLibraryExists.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckStructHasMember.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckSymbolExists.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckTypeSize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/DartConfiguration.tcl.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindGTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindThreads.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GNUInstallDirs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GenerateExportHeader.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckSourceRuns.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/WriteBasicConfigVersionFile.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/exportheader.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Templates/CPackConfig.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/cmake/DetermineGflagsNamespace.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/cmake/FindUnwind.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/cmake/GetCacheVariables.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/glog-config.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/glog-modules.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/libglog.pc.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/config.h.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/logging.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/raw_logging.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/stl_logging.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/vlog_is_on.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestConfig.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestConfigVersion.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestTargets-noconfig.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakePackageConfigHelpers.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeParseArguments.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakePushCheckState.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CPack.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CPackComponent.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CTestTargets.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CTestUseLaunchers.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckCXXSourceRuns.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckFunctionExists.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckIncludeFile.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckLibraryExists.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckStructHasMember.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckSymbolExists.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CheckTypeSize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/DartConfiguration.tcl.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindGTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindThreads.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GNUInstallDirs.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GenerateExportHeader.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/GoogleTest.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Internal/CheckSourceRuns.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/WriteBasicConfigVersionFile.cmake /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/exportheader.cmake.in /Applications/tool/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Templates/CPackConfig.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/CMakeLists.txt /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/cmake/DetermineGflagsNamespace.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/cmake/FindUnwind.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/cmake/GetCacheVariables.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/glog-config.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/glog-modules.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/libglog.pc.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/config.h.cmake.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/logging.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/raw_logging.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/stl_logging.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog/src/glog/vlog_is_on.h.in /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestConfig.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestConfigVersion.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestTargets-noconfig.cmake /Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

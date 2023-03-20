@@ -1,0 +1,15 @@
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libglog.0.5.0.dylib
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libglog.0.dylib
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/libglog.dylib
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include/glog/export.h
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include/glog/logging.h
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include/glog/raw_logging.h
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include/glog/stl_logging.h
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include/glog/vlog_is_on.h
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/include/glog/log_severity.h
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/pkgconfig/libglog.pc
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/glog/glog-modules.cmake
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/glog/glog-config.cmake
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/glog/glog-config-version.cmake
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/glog/glog-targets.cmake
+/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/lib/cmake/glog/glog-targets-noconfig.cmake

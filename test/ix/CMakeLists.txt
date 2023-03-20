@@ -1,0 +1,6 @@
+file(GLOB files ixtest*.cc)
+foreach (file ${files})
+    get_filename_component(name ${file} NAME_WE)
+    gtest_add_test(${name} ${file})
+    target_link_libraries(${name} pfm ix)
+endforeach ()

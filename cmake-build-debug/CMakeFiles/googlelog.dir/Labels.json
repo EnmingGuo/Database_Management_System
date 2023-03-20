@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googlelog"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googlelog.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/CMakeFiles/googlelog-complete.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-build.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-configure.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-download.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-install.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-mkdir.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-patch.rule"
+		},
+		{
+			"file" : "/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug/googlelog-prefix/src/googlelog-stamp/googlelog-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googlelog"
+		],
+		"name" : "googlelog"
+	}
+}
