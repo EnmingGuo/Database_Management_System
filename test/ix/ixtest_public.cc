@@ -237,7 +237,9 @@ namespace PeterDBTesting {
         // Fetch and check all entries
         std::vector<PeterDB::RID> ridsCopy(rids);
         int count = 0;
+
         while (ix_ScanIterator.getNextEntry(rid, &key) == success) {
+
             validateUnorderedRID(key, (int) (count + seed), ridsCopy);
             count++;
             if (count % 5000 == 0) {
@@ -256,6 +258,7 @@ namespace PeterDBTesting {
         // insert more entries
         seed = 200;
         salt = 567;
+
         generateAndInsertEntries(numOfMoreEntries, ageAttr, seed, salt);
 
         // Reopen the file
@@ -269,6 +272,7 @@ namespace PeterDBTesting {
         // Fetch and check all entries
         count = 0;
         while (ix_ScanIterator.getNextEntry(rid, &key) == success) {
+
             validateUnorderedRID(key, (int) (count + seed), this->rids);
             count++;
             if (count % 5000 == 0) {
@@ -287,7 +291,6 @@ namespace PeterDBTesting {
 
         EXPECT_GE (getFileSize(indexFileName) / PAGE_SIZE, (numOfEntries + numOfMoreEntries) / PAGE_SIZE / 10)
                             << "page size should be increased.";
-
     }
 
     TEST_F(IX_Test, scan_by_GE_OP) {
@@ -306,6 +309,7 @@ namespace PeterDBTesting {
         // Insert more entries
         seed = value;
         generateAndInsertEntries(numOfMoreEntries, ageAttr, seed, salt);
+
 
         // Scan
         ASSERT_EQ(ix.scan(ixFileHandle, ageAttr, &value, nullptr, true, true, ix_ScanIterator), success)
@@ -558,7 +562,6 @@ namespace PeterDBTesting {
         // Scan - NO_OP
         ASSERT_EQ(ix.scan(ixFileHandle, heightAttr, nullptr, nullptr, true, true, ix_ScanIterator), success)
                                     << "indexManager::scan() should succeed.";
-
         // Delete entries in IndexScan Iterator
         unsigned count = 0;
         while (ix_ScanIterator.getNextEntry(rid, &key) == success) {
@@ -569,6 +572,8 @@ namespace PeterDBTesting {
             }
             ASSERT_EQ(ix.deleteEntry(ixFileHandle, heightAttr, &key, rid), success)
                                         << "indexManager::deleteEntry() should succeed.";
+            std::cout<<count<<std::endl;
+
         }
 
         EXPECT_EQ(count, numOfEntries) << "scanned count should match inserted.";
@@ -631,10 +636,12 @@ namespace PeterDBTesting {
         ASSERT_EQ(ix.printBTree(ixFileHandle, empNameAttr, stream), success)
                                     << "indexManager::printBTree() should succeed.";
 
+
         // we give a very loose D
         // (1+n)n/2 <= PAGE_SIZE, thus n >= 2^6.5 = 90.5, we would put very loose D as around 45.
         validateTree(stream, numOfEntries, numOfEntries + numOfMoreEntries, 2,
                      45, true);
+
 
         // collect counter
         ASSERT_EQ(ixFileHandle.collectCounterValues(rc, wc, ac), success)
@@ -918,7 +925,9 @@ namespace PeterDBTesting {
                                     << "indexManager::scan() should succeed.";
 
         returnedCount = 0;
+
         while (ix_ScanIterator.getNextEntry(rid, &key) != IX_EOF) {
+
 
             ASSERT_EQ (ix_ScanIterator2.getNextEntry(rid2, &key2), success) << "Scan outputs should match.";
             ASSERT_EQ (rid.pageNum, rid2.pageNum) << "Scan outputs (PageNum) should match.";

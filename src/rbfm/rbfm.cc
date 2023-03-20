@@ -92,12 +92,13 @@ namespace PeterDB {
                 free(buffer);
                 return -1;
             }
-            if(UpdatePageContent(pageContent,buffer,rid)==-1){
+            int result = UpdatePageContent(pageContent,buffer,rid);
+            if(result==-1){
                 free(pageContent);
                 free(buffer);
                 return -1;
             }
-            else if(UpdatePageContent(pageContent,buffer,rid)==UPDATE_NO_ENOUGH){
+            else if(result==UPDATE_NO_ENOUGH){
                 RID newRid;
                 insertRecord(fileHandle,recordDescriptor,data,newRid);
                 unsigned temp=SLOT_POINTER;
@@ -175,6 +176,7 @@ namespace PeterDB {
         memcpy((char*)pageContent+PAGE_SIZE-2*sizeof(unsigned),&newVacantSlotNum,sizeof(unsigned));
         memcpy((char*)pageContent+(PAGE_SIZE-sizeof(unsigned)),&newVaccant,sizeof(unsigned));
         free(tempBuffer);
+
         return 0;
 
     }

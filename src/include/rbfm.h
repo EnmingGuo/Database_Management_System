@@ -21,7 +21,7 @@ namespace PeterDB {
 
     // Attribute
     typedef enum {
-        TypeInt = 0, TypeReal, TypeVarChar
+        TypeInt = 0, TypeReal, TypeVarChar, TypeVacant
     } AttrType;
 
     typedef unsigned AttrLength;
@@ -180,7 +180,12 @@ namespace PeterDB {
         RC deRecord(const void *data, void *dest, const std::vector<Attribute> &recordDescriptor);
 
         RC toRecord(const void *data, void *dest, const std::vector<Attribute> &recordDescriptor);
+
         void RealRID(FileHandle &fileHandle,std::vector<RID> &rid,RID curRid);
+
+        RC checkNull(unsigned int i, const char *data);
+
+        RC changeBit(char* buffer,unsigned index);
 
 
     protected:
@@ -200,18 +205,11 @@ namespace PeterDB {
         unsigned counter=0;
 
 
-        RC checkNull(unsigned int i, const char *data);
-
-
-
         RC deAttribute(const void* data, void*dest, const std::string & attributeName, const std::vector<Attribute>& recordDescriptor);
 
         unsigned int checkRecordSize(void *dest);
 
         unsigned int ChangePageContent(void *pageContent, void *buffer, RID &rid);
-        RC changeBit(char* buffer,unsigned index);
-
-
 
         RC compactRecord(void *data, const RID &rid);
     };

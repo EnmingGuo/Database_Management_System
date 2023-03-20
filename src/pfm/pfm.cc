@@ -145,6 +145,7 @@ namespace PeterDB {
     }
 
     RC FileHandle::readPage(PageNum pageNum, void *data) {
+        if(pageNum<0)return -1;
         //first check the fl
         if(fl == NULL){
             return -1;
@@ -164,6 +165,8 @@ namespace PeterDB {
     }
 
     RC FileHandle::writePage(PageNum pageNum, const void *data) {
+        if(pageNum<0)return -1;
+
         if(fl==NULL){
             return -1;
         }

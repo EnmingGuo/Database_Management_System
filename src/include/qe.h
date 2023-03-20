@@ -4,8 +4,10 @@
 #include <vector>
 #include <string>
 #include <limits>
+#include <stdio.h>
 
 #include "rm.h"
+#include "rbfm.h"
 #include "ix.h"
 
 namespace PeterDB {
@@ -14,6 +16,11 @@ namespace PeterDB {
     typedef enum AggregateOp {
         MIN = 0, MAX, COUNT, SUM, AVG
     } AggregateOp;
+
+    typedef struct Unit{
+        float sum;
+        int count;
+    } Unit;
 
     // The following functions use the following
     // format for the passed data.
@@ -149,6 +156,7 @@ namespace PeterDB {
             for (Attribute &attribute : attributes) {
                 attribute.name = tableName + "." + attribute.name;
             }
+            return 0;
         };
 
         ~IndexScan() override {
@@ -163,12 +171,20 @@ namespace PeterDB {
                const Condition &condition     // Selection condition
         );
 
-        ~Filter() override;
+        ~Filter() override = default;
 
         RC getNextTuple(void *data) override;
 
+        bool isSatisfy(char *data, const std::vector<Attribute> &attrs, const Condition& cond);
+
+        bool isCompareSatisfy(void* key);
         // For attribute in std::vector<Attribute>, name it as rel.attr
         RC getAttributes(std::vector<Attribute> &attrs) const override;
+
+    private:
+        Iterator* input;
+        Condition condition;
+        std::vector<Attribute> attributes;
     };
 
     class Project : public Iterator {
@@ -176,12 +192,18 @@ namespace PeterDB {
     public:
         Project(Iterator *input,                                // Iterator of input R
                 const std::vector<std::string> &attrNames);     // std::vector containing attribute names
-        ~Project() override;
+        ~Project() override = default;
 
         RC getNextTuple(void *data) override;
 
         // For attribute in std::vector<Attribute>, name it as rel.attr
         RC getAttributes(std::vector<Attribute> &attrs) const override;
+
+    private:
+        Iterator* input;
+        std::vector<std::string> attrNames;
+        int findAttributePosition(std::string attrName);
+        std::vector<Attribute> attributes;
     };
 
     class BNLJoin : public Iterator {
@@ -200,6 +222,31 @@ namespace PeterDB {
 
         // For attribute in std::vector<Attribute>, name it as rel.attr
         RC getAttributes(std::vector<Attribute> &attrs) const override;
+
+        void fillLeftBuffer();
+
+        int checkRecordSize(const void* record);
+
+        int correspondingVectorSize(const void* key,AttrType attrType);
+
+        void BNLGiveResult(const void* key, void* result);
+    private:
+        Iterator* leftIn;
+        TableScan* rightIn;
+        Condition condition;
+        bool leftFinished;
+        std::vector<Attribute> leftAttrs;
+        std::vector<Attribute> rightAttrs;
+        Attribute leftAttribute;
+        Attribute rightAttribue;
+        unsigned int maxSize = 0, remainSize = 0;
+        unsigned int singlePosibileSize = 0;
+        char* currentRightData = (char*) calloc(PAGE_SIZE, sizeof(char*));
+        int pointer;
+        std::map<int, std::vector<std::vector<char>>> intMap;
+        std::map<float, std::vector<std::vector<char>>> floatMap;
+        std::map<std::string, std::vector<std::vector<char>>> varcharMap;
+
     };
 
     class INLJoin : public Iterator {
@@ -216,6 +263,14 @@ namespace PeterDB {
 
         // For attribute in std::vector<Attribute>, name it as rel.attr
         RC getAttributes(std::vector<Attribute> &attrs) const override;
+    private:
+        Iterator* leftIn;
+        IndexScan* rightIn;
+        Condition condition;
+        std::vector<Attribute> leftAttrs;
+        std::vector<Attribute> rightAttrs;
+        char* currentLeftData;
+        int currentLeftStatus = 0;
     };
 
     // 10 extra-credit points
@@ -254,7 +309,7 @@ namespace PeterDB {
                   AggregateOp op              // Aggregate operation
         );
 
-        ~Aggregate() override;
+        ~Aggregate() override = default;
 
         RC getNextTuple(void *data) override;
 
@@ -262,6 +317,47 @@ namespace PeterDB {
         // E.g. Relation=rel, attribute=attr, aggregateOp=MAX
         // output attrName = "MAX(rel.attr)"
         RC getAttributes(std::vector<Attribute> &attrs) const override;
+
+        void aggreCal(const char* key, AttrType attrType,Unit & unit, const AggregateOp op);
+
+        void giveResult(void* result,const Unit &unit, const AggregateOp op ,AttrType attrType) ;
+
+        void giveResult(void* result, const Unit&unit,const Value value,const AggregateOp op ,AttrType attrType);
+
+        void groupScan();
+    private:
+        Iterator* input;
+        Attribute aggAttr;
+        Attribute groupAttr;
+        std::vector<Attribute> attributes;
+        bool single = true;
+        bool finished = false;
+        int groupCount;
+        Unit singleUnit;
+        AggregateOp op;
+        std::map<int,Unit> intUnitHash;
+        std::map<float,Unit> floatUnitHash;
+        std::map<std::string,Unit> stringUnitHash;
+        template<typename T>
+        void prepareHash(const void* key,std::map<T,Unit>&TUnitHash,std::map<std::string,Unit>&stringUnitHash,AttrType groupAttrType,AggregateOp op);
+        void setSum(Unit & unit,AggregateOp op){
+            unit.count = 0;
+            unit.sum = 0;
+            if(op==MIN){
+                unit.sum=std::numeric_limits<float>::max();
+            }
+            else if(op==MAX){
+                unit.sum=std::numeric_limits<float>::min();
+            }
+        }
+    };
+
+    class MyJoin {
+    public:
+        static bool isSatisfy(void* leftData, void* rightData, const std::vector<Attribute>& leftAttrs, const std::vector<Attribute>& rightAttrs, const Condition& cond);
+        static AttrType findKey(void* key, void* data, const std::vector<Attribute>& attrs, const std::string name);
+        static bool isCompareSatisfy(void* leftData, void* rightData,CompOp op,AttrType attrType);
+        static void join(char* result, char* leftData, char* rightData, const std::vector<Attribute>& leftAttrs, const std::vector<Attribute>& rightAttrs);
     };
 } // namespace PeterDB
 

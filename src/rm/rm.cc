@@ -1,5 +1,6 @@
 #include "src/include/rm.h"
 #include "src/include/rbfm.h"
+#include "src/include/ix.h"
 #include <functional>
 namespace PeterDB {
     RelationManager &RelationManager::instance() {
@@ -324,11 +325,20 @@ namespace PeterDB {
     RC RelationManager::deleteTable(const std::string &tableName) {
         if(tableName == RelationManager::tableName || tableName == RelationManager::columnName)
             return -1;
-        RC rc = openCatalog();
+        /*接下来我要把根据这个创建的全部索引文件全部删除哦*/
+        RC rc= destroyAllIndex(tableName);
+        if(rc!=0){
+            std::cerr<<"delete all index failed!"<<std::endl;
+            closeCatalog();
+            return -1;
+        }
+
+        rc = openCatalog();
         if(rc != 0){
             closeCatalog();
             return -1;
         }
+
         std::string fileName = getFileName(tableName);
         rc = RecordBasedFileManager::instance().destroyFile(fileName);
         if(rc!=0){
@@ -346,6 +356,7 @@ namespace PeterDB {
             closeCatalog();
             return -1;
         }
+        /*将全部记录再删除了*/
         std::vector<Attribute> recordDescriptor;
         rc=RecordBasedFileManager::instance().deleteRecord(tableFileHandler,recordDescriptor,tableRID);
         if(rc!=0){
@@ -570,6 +581,50 @@ namespace PeterDB {
             std::cerr<<"Fail to insert the tuple!"<<std::endl;
         }
         rc = RecordBasedFileManager::instance().closeFile(fileHandle);
+        if(rc!=0){
+            std::cerr<<"Fail to close File!"<<std::endl;
+        }
+
+        /*接下来就是索引的操作！*/
+        std::vector<Attribute>indexAttrs;
+        rc= getAttributes(tableName,indexAttrs);
+        IndexManager& ixm = IndexManager::instance();
+        for(Attribute attribute: indexAttrs){
+            //先测试文件索引文件是否存在
+            std::string indexFileName = getIndexTableName(tableName, attribute.name);
+            FILE* fp = fopen(indexFileName.c_str(), "r");
+            if(fp== NULL){
+                continue;
+            }
+            fclose(fp);
+            // With null byte at the beginning
+            char* rawAttribute = (char*)calloc(PAGE_SIZE, sizeof(char));
+            readAttribute(tableName, rid, attribute.name, rawAttribute);
+            char* key = (char*)calloc(PAGE_SIZE, sizeof(char));
+            //skip null bit
+            memcpy(key, rawAttribute + sizeof(char), PAGE_SIZE - sizeof(char));
+            IXFileHandle ixFileHandle;
+            rc = ixm.openFile(indexFileName, ixFileHandle);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                free(key);
+                free(rawAttribute);
+                std::cerr<<"Can't open index file"<<std::endl;
+                return -1;
+            }
+            rc = ixm.insertEntry(ixFileHandle, attribute, key, rid);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                free(key);
+                free(rawAttribute);
+                std::cerr<<"Can't insert index"<<std::endl;
+                return -1;
+            }
+            ixm.closeFile(ixFileHandle);
+            free(key);
+            free(rawAttribute);
+        }
+
         return rc;
     }
 
@@ -585,12 +640,49 @@ namespace PeterDB {
             std::cerr<<"Fail to openFile!"<<std::endl;
             return -1;
         }
+        /*接下来删除索引的操作*/
+        std::vector<Attribute>indexAttrs;
+        rc= getAttributes(tableName,indexAttrs);
+        IndexManager& ixm = IndexManager::instance();
+        for(Attribute attribute: indexAttrs){
+            //先测试文件索引文件是否存在
+            std::string indexFileName = getIndexTableName(tableName, attribute.name);
+            FILE* fp = fopen(indexFileName.c_str(), "r");
+            if(fp== NULL){
+                continue;
+            }
+            fclose(fp);
+            // With null byte at the beginning
+            char* rawAttribute = (char*)calloc(PAGE_SIZE, sizeof(char));
+            readAttribute(tableName, rid, attribute.name, rawAttribute);
+            char* key = (char*)calloc(PAGE_SIZE, sizeof(char));
+            memcpy(key, rawAttribute + sizeof(char), PAGE_SIZE - sizeof(char));
+            IXFileHandle ixFileHandle;
+            rc = ixm.openFile(indexFileName, ixFileHandle);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                std::cerr<<"Can't open index file"<<std::endl;
+                free(key);
+                free(rawAttribute);
+                return -1;
+            }
+            rc = ixm.deleteEntry(ixFileHandle, attribute, key, rid);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                std::cerr<<"Can't delete index"<<std::endl;
+                free(key);
+                free(rawAttribute);
+                return -1;
+            }
+            ixm.closeFile(ixFileHandle);
+            free(key);
+            free(rawAttribute);
+        }
         rc = RecordBasedFileManager::instance().deleteRecord(fileHandle, attrs, rid);
         if(rc != 0) {
             std::cerr<<"Fail to deleteRecord!"<<std::endl;
             return -1;
         }
-
         rc = RecordBasedFileManager::instance().closeFile(fileHandle);
         return rc;
     }
@@ -612,10 +704,86 @@ namespace PeterDB {
             std::cerr<<"Fail to openFile!"<<std::endl;
             return -1;
         }
+        /*接下来就是删除索引的操作了*/
+        std::vector<Attribute>indexAttrs;
+        rc= getAttributes(tableName,indexAttrs);
+        IndexManager& ixm = IndexManager::instance();
+        for(Attribute attribute: indexAttrs){
+            //先测试文件索引文件是否存在
+            std::string indexFileName = getIndexTableName(tableName, attribute.name);
+            FILE* fp = fopen(indexFileName.c_str(), "r");
+            if(fp== NULL){
+                continue;
+            }
+            fclose(fp);
+            // With null byte at the beginning
+            char* rawAttribute = (char*)calloc(PAGE_SIZE, sizeof(char));
+            readAttribute(tableName, rid, attribute.name, rawAttribute);
+            char* key = (char*)calloc(PAGE_SIZE, sizeof(char));
+            memcpy(key, rawAttribute + sizeof(char), PAGE_SIZE - sizeof(char));
+            IXFileHandle ixFileHandle;
+            rc = ixm.openFile(indexFileName, ixFileHandle);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                std::cerr<<"Can't open index file"<<std::endl;
+                free(key);
+                free(rawAttribute);
+                return -1;
+            }
+            rc = ixm.deleteEntry(ixFileHandle, attribute, key, rid);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                std::cerr<<"Can't delete index"<<std::endl;
+                free(key);
+                free(rawAttribute);
+                return -1;
+            }
+            ixm.closeFile(ixFileHandle);
+            free(key);
+            free(rawAttribute);
+        }
         rc = RecordBasedFileManager::instance().updateRecord(fileHandle, attrs, data, rid);
         if(rc != 0){
             std::cerr<<"Fail to updateRecord!"<<std::endl;
             return -1;
+        }
+        /*接下来就是索引的操作！*/
+        indexAttrs.clear();
+        rc= getAttributes(tableName,indexAttrs);
+        for(Attribute attribute: indexAttrs){
+            //先测试文件索引文件是否存在
+            std::string indexFileName = getIndexTableName(tableName, attribute.name);
+            FILE* fp = fopen(indexFileName.c_str(), "r");
+            if(fp== NULL){
+                continue;
+            }
+            fclose(fp);
+            // With null byte at the beginning
+            char* rawAttribute = (char*)calloc(PAGE_SIZE, sizeof(char));
+            readAttribute(tableName, rid, attribute.name, rawAttribute);
+            char* key = (char*)calloc(PAGE_SIZE, sizeof(char));
+            //skip null bit
+            memcpy(key, rawAttribute + sizeof(char), PAGE_SIZE - sizeof(char));
+            IXFileHandle ixFileHandle;
+            rc = ixm.openFile(indexFileName, ixFileHandle);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                free(key);
+                free(rawAttribute);
+                std::cerr<<"Can't open index file"<<std::endl;
+                return -1;
+            }
+            rc = ixm.insertEntry(ixFileHandle, attribute, key, rid);
+            if(rc != 0){
+                ixm.closeFile(ixFileHandle);
+                free(key);
+                free(rawAttribute);
+                std::cerr<<"Can't insert index"<<std::endl;
+                return -1;
+            }
+            ixm.closeFile(ixFileHandle);
+            free(key);
+            free(rawAttribute);
         }
         rc=RecordBasedFileManager::instance().closeFile(fileHandle);
         return rc;
@@ -728,12 +896,59 @@ namespace PeterDB {
 
     // QE IX related
     RC RelationManager::createIndex(const std::string &tableName, const std::string &attributeName){
-        return -1;
+        //先判断文件是否存在以及传入构造索引的attributename是否存在？
+        if(isAttributeExist(tableName,attributeName)==false)return -1;
+
+        std::string indexFileName = getIndexTableName(tableName,attributeName);
+        IndexManager& indexManager = IndexManager::instance();
+        RC rc = indexManager.createFile(indexFileName);
+        if(rc != 0)return -1;
+        IXFileHandle ixFileHandle;
+        rc = indexManager.openFile(indexFileName, ixFileHandle);
+        if(rc != 0) return -1;
+        std::vector<Attribute> attributeNames;
+        attributeNames.push_back(fetchAttribute(tableName,attributeName));
+        insertMetaData(getIndexTableName(tableName,attributeName),attributeNames);
+
+        /*往里面插入Entry数据*/
+        RM_ScanIterator iter;
+        std::vector<std::string>Names;
+        for(auto item : attributeNames){
+            Names.push_back(item.name);
+        }
+        rc = scan(tableName, "", NO_OP, NULL, Names, iter);
+        if(rc != 0) return -1;
+        RID rid;
+        char* data = (char*)malloc(PAGE_SIZE);
+        while(iter.getNextTuple(rid, data) != RM_EOF){
+            // For there is null byte in the front of data
+            char*key = (char*)malloc(PAGE_SIZE);
+            memcpy(key, data + sizeof(char), PAGE_SIZE-sizeof(char));
+            if(attributeNames.size()>0)
+                indexManager.insertEntry(ixFileHandle, attributeNames.at(0), key, rid);
+            free(key);
+        }
+
+        free(data);
+        rc=indexManager.closeFile(ixFileHandle);
+        if(rc != 0)return -1;
+        iter.close();
+        return 0;
     }
 
     RC RelationManager::destroyIndex(const std::string &tableName, const std::string &attributeName){
-        return -1;
+        if(isAttributeExist(tableName,attributeName)==false)return -1;
+        std::string indexFileName= getIndexTableName(tableName,attributeName);
+        IndexManager & indexManager =IndexManager::instance();
+        RC rc=indexManager.destroyFile(indexFileName);
+        if(rc != 0 )return -1;
+        IXFileHandle ixFileHandle;
+        rc = deleteTable(indexFileName);
+        if(rc != 0)return -1;
+        return 0;
     }
+
+
 
     // indexScan returns an iterator to allow the caller to go through qualified entries in index
     RC RelationManager::indexScan(const std::string &tableName,
@@ -743,7 +958,49 @@ namespace PeterDB {
                  bool lowKeyInclusive,
                  bool highKeyInclusive,
                  RM_IndexScanIterator &rm_IndexScanIterator){
-        return -1;
+        return rm_IndexScanIterator.initScanIterator(tableName, attributeName, lowKey, highKey, lowKeyInclusive, highKeyInclusive);
+    }
+
+    bool RelationManager::isAttributeExist(const std::string &tableName, const std::string &attributeName) {
+        std::vector<Attribute> attributes;
+        RC rc = getAttributes(tableName, attributes);
+        if(rc != 0) return false;
+        for(Attribute attribute:attributes){
+            if(attribute.name == attributeName)
+                return true;
+        }
+        return false;
+    }
+
+    RC RelationManager::destroyAllIndex(const std::string &tableName) {
+        std::vector <Attribute > attributes;
+        RC rc = getAttributes(tableName,attributes);
+        if(rc != 0 )return -1;
+        for(Attribute attribute:attributes){
+            std::string fileName = getIndexTableName(tableName,attribute.name);
+            FILE* fp = fopen(fileName.c_str(), "r");
+            if(fp!= NULL){
+                destroyIndex(tableName,attribute.name);
+                fclose(fp);
+            }
+
+        }
+        return 0;
+    }
+
+    std::string RelationManager::getIndexTableName(const std::string tableName,const std::string attributeNames) {
+        return tableName+"_"+attributeNames+".idx";
+    }
+
+    Attribute RelationManager::fetchAttribute(const std::string tableName,const std::string attributeName) {
+        std::vector<Attribute> attributes;
+        getAttributes(tableName,attributes);
+        Attribute attribute;
+        for(int i = 0; i < attributes.size(); i++){
+            if(attributes[i].name == attributeName)
+                attribute = attributes[i];
+        }
+        return attribute;
     }
 
 
@@ -752,11 +1009,41 @@ namespace PeterDB {
     RM_IndexScanIterator::~RM_IndexScanIterator() = default;
 
     RC RM_IndexScanIterator::getNextEntry(RID &rid, void *key){
-        return -1;
+        return this->ix_ScanIterator.getNextEntry(rid,key);
     }
+    RC RM_IndexScanIterator::initScanIterator(const std::string &tableName,
+                                              const std::string &attributeName,
+                                              const void *lowKey,
+                                              const void *highKey,
+                                              bool lowKeyInclusive,
+                                              bool highKeyInclusive
+    ){
 
+        std::string indexFileName = RelationManager::instance().getIndexTableName(tableName,attributeName);
+        Attribute attribute;
+        std::vector<Attribute> attributes;
+        RC rc = RelationManager::instance().getAttributes(tableName, attributes);
+        if(rc != 0){
+            std::cerr<<"No such table!"<<std::endl;
+            return rc;
+        }
+        // find the attribute with the specific name
+        attribute = RelationManager::instance().fetchAttribute(tableName,attributeName);
+        rc = IndexManager::instance().openFile(indexFileName, ixFileHandle);
+        if(rc != 0){
+            std::cerr<<"No such index table!"<<std::endl;
+            return rc;
+        }
+        return IndexManager::instance().scan(ixFileHandle,attribute, lowKey, highKey, lowKeyInclusive, highKeyInclusive, this->ix_ScanIterator);
+
+    }
     RC RM_IndexScanIterator::close(){
-        return -1;
+        RC rc = IndexManager::instance().closeFile(ixFileHandle);
+        if(rc != 0){
+            std::cerr<<"No such index table!"<<std::endl;
+            return rc;
+        }
+        return this->ix_ScanIterator.close();
     }
 
 } // namespace PeterDB

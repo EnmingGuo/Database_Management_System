@@ -212,6 +212,7 @@ namespace PeterDBTesting {
                 T key = fixedKey == 0 ? value : fixedKey;
                 ASSERT_EQ(ix.insertEntry(ixFileHandle, attr, &key, rid), success)
                                             << "indexManager::insertEntry() should succeed.";
+                //std::cout<<i<<std::endl;
             }
         }
 
@@ -280,7 +281,11 @@ namespace PeterDBTesting {
             });
             EXPECT_NE(target, ridsForCheck.end()) << "RID is not from inserted.";
             ridsForCheck.erase(target);
+            if(key!=expected){
+
+            }
             EXPECT_EQ(key, expected) << "key does not match.";
+
         }
 
     };

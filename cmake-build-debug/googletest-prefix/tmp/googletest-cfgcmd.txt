@@ -1,1 +1,0 @@
-cmd='/Applications/tool/CLion.app/Contents/bin/cmake/mac/bin/cmake;-DCMAKE_INSTALL_PREFIX=/Users/guoemmett/Desktop/cs222-winter23-cutecutelovelydoggy/cmake-build-debug;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

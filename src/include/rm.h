@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "src/include/rbfm.h"
+#include "src/include/ix.h"
 
 namespace PeterDB {
 #define RM_EOF (-1)  // end of a scan operator
@@ -34,6 +35,16 @@ namespace PeterDB {
         // "key" follows the same format as in IndexManager::insertEntry()
         RC getNextEntry(RID &rid, void *key);    // Get next matching entry
         RC close();                              // Terminate index scan
+        RC initScanIterator(const std::string &tableName,
+                                                  const std::string &attributeName,
+                                                  const void *lowKey,
+                                                  const void *highKey,
+                                                  bool lowKeyInclusive,
+                                                  bool highKeyInclusive
+        );
+    private:
+        IX_ScanIterator ix_ScanIterator;
+        IXFileHandle ixFileHandle;
 
     };
 
@@ -55,6 +66,10 @@ namespace PeterDB {
         RC readAllTableName();
 
         std::string getFileName(const std::string tableName);
+
+        std::string getIndexTableName(const std:: string tableName,const std::string attributeNames);
+
+        Attribute fetchAttribute(const std::string tableName,const std::string attributeName);
 
         RC combineColumnWithTableID(std::vector<Attribute>&attrs,RC tableID);
 
@@ -105,7 +120,11 @@ namespace PeterDB {
         // QE IX related
         RC createIndex(const std::string &tableName, const std::string &attributeName);
 
+        bool isAttributeExist(const std::string &tableName,const std::string & attributeName);
+
         RC destroyIndex(const std::string &tableName, const std::string &attributeName);
+
+        RC destroyAllIndex(const std::string &tableName);
 
         // indexScan returns an iterator to allow the caller to go through qualified entries in index
         RC indexScan(const std::string &tableName,

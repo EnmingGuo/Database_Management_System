@@ -13,6 +13,8 @@ namespace PeterDBTesting {
         std::string tableName = "left";
         tableNames.emplace_back(tableName);
 
+        //remove(tableName.c_str());
+
         // Create a table
         ASSERT_EQ(rm.createTable(tableName, attrsMap[tableName]), success)
                                     << "Create table " << tableName << " should succeed.";
@@ -62,6 +64,7 @@ namespace PeterDBTesting {
 
         // Go over the data through iterator
         std::vector<std::string> printed;
+
         ASSERT_EQ(filter.getAttributes(attrs), success) << "Filter.getAttributes() should succeed.";
         while (filter.getNextTuple(outBuffer) != QE_EOF) {
             // Null indicators should be placed in the beginning.
@@ -161,6 +164,7 @@ namespace PeterDBTesting {
         outBuffer = malloc(bufSize);
 
         std::string tableName = "right";
+
         createAndPopulateTable(tableName, {"D", "C", "B"}, 1000);
 
         // Set up IndexScan
@@ -216,7 +220,9 @@ namespace PeterDBTesting {
         inBuffer = malloc(bufSize);
         outBuffer = malloc(bufSize);
 
+
         std::string tableName = "right";
+
         createAndPopulateTable(tableName, {}, 1000);
 
         // Set up TableScan
@@ -227,12 +233,17 @@ namespace PeterDBTesting {
 
         // Go over the data through iterator
         std::vector<std::string> printed;
+
+
+
         ASSERT_EQ(project.getAttributes(attrs), success) << "Project.getAttributes() should succeed.";
+
         while (project.getNextTuple(outBuffer) != QE_EOF) {
             // Null indicators should be placed in the beginning.
             std::stringstream stream;
             ASSERT_EQ(rm.printTuple(attrs, outBuffer, stream), success)
                                         << "RelationManager.printTuple() should succeed.";
+            std::string temp=stream.str();
             printed.emplace_back(stream.str());
             memset(outBuffer, 0, bufSize);
         }
@@ -265,9 +276,11 @@ namespace PeterDBTesting {
         outBuffer = malloc(bufSize);
 
         std::string leftTableName = "left";
+        remove(leftTableName.c_str());
         createAndPopulateTable(leftTableName, {"B", "A", "C"}, 100);
 
         std::string rightTableName = "right";
+        remove(rightTableName.c_str());
         createAndPopulateTable(rightTableName, {"D", "B", "C"}, 100);
 
         // Prepare the iterator and condition
@@ -281,6 +294,7 @@ namespace PeterDBTesting {
         // Go over the data through iterator
         std::vector<std::string> printed;
         ASSERT_EQ(bnlJoin.getAttributes(attrs), success) << "BNLJoin.getAttributes() should succeed.";
+
         while (bnlJoin.getNextTuple(outBuffer) != QE_EOF) {
             std::stringstream stream;
             ASSERT_EQ(rm.printTuple(attrs, outBuffer, stream), success)
@@ -553,6 +567,8 @@ namespace PeterDBTesting {
         outBuffer = malloc(bufSize);
 
         std::string tableName = "right";
+        remove(tableName.c_str());
+
         createAndPopulateTable(tableName, {"B", "C"}, 3000);
 
         // Create IndexScan
@@ -584,10 +600,12 @@ namespace PeterDBTesting {
         char data2[bufSize];
 
         std::string tableName = "left";
+        remove(tableName.c_str());
         createAndPopulateTable(tableName, {"A", "B", "C"}, 25);
 
         // update a tuple: 10 updates to 100
         prepareLeftTuple(nullsIndicator, 90, inBuffer);
+
         rm.updateTuple("left", inBuffer, rids[0]);
 
         // delete two tuples: 13 and 14 are removed
@@ -1253,6 +1271,7 @@ namespace PeterDBTesting {
         outBuffer = malloc(bufSize);
 
         std::string tableName = "group";
+        remove(tableName.c_str());
         createAndPopulateTable(tableName, {"A", "B"}, 2000);
 
         // Create TableScan
